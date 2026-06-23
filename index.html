@@ -5,11 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>华夏学堂 - 3D历史语文益智学习</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{colors:{gold:'#D4A574','gold-light':'#E8D5B7','deep-blue':'#0a0a1a','deep-blue-light':'#1a1a2e'},fontFamily:{serif:['Noto Serif SC','SimSun','serif'],sans:['Noto Sans SC','Microsoft YaHei','sans-serif']}}}}</script>
+<script>
+tailwind.config={theme:{extend:{colors:{gold:"#D4A574","gold-light":"#E8D5B7","deep-blue":"#0a0a1a","deep-blue-light":"#1a1a2e"},fontFamily:{serif:["Noto Serif SC","SimSun","serif"],sans:["Noto Sans SC","Microsoft YaHei","sans-serif"]}}}}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
-<style>body{background:#0a0a1a;color:#E8D5B7;font-family:'Noto Sans SC',sans-serif;margin:0;overflow-x:hidden}.font-serif{font-family:'Noto Serif SC',serif}.gold{color:#D4A574}.glass{background:rgba(26,26,46,.9);border:1px solid rgba(212,165,116,.2);backdrop-filter:blur(10px)}.btn-gold{background:linear-gradient(135deg,#8B4513,#D4A574);color:#0a0a1a;font-weight:700;padding:12px 24px;border-radius:8px;border:none;cursor:pointer;transition:all .3s}.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(212,165,116,.4)}.card-hover{transition:all .3s}.card-hover:hover{transform:translateY(-4px)}#canvas-container{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0}.page{position:relative;z-index:1;min-height:100vh}</style>
+<style>
+body{background:#0a0a1a;color:#E8D5B7;font-family:"Noto Sans SC",sans-serif;margin:0;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+.font-serif{font-family:"Noto Serif SC",serif}
+.gold{color:#D4A574}
+.text-glow{text-shadow:0 0 20px rgba(212,165,116,.3),0 2px 4px rgba(0,0,0,.5)}
+.glass{background:rgba(26,26,46,.85);border:1px solid rgba(212,165,116,.15);backdrop-filter:blur(12px)}
+.btn-gold{background:linear-gradient(135deg,#8B4513,#D4A574);color:#0a0a1a;font-weight:700;padding:12px 24px;border-radius:10px;border:none;cursor:pointer;transition:all .3s}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(212,165,116,.4)}
+.btn-gold:active{transform:scale(.96)}
+.game-card{transition:all .25s cubic-bezier(.4,0,.2,1)}
+.game-card:hover{transform:scale(1.03);box-shadow:0 8px 30px rgba(212,165,116,.15)}
+.game-card:active{transform:scale(.97)}
+#canvas-container{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0}
+.page{position:relative;z-index:1;min-height:100vh}
+.scroll-hide::-webkit-scrollbar{display:none}
+.scroll-hide{-ms-overflow-style:none;scrollbar-width:none}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bounceSlow{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.animate-fade-in{animation:fadeIn .5s ease-out}
+.animate-slide-up{animation:slideUp .4s ease-out forwards;opacity:0}
+.animate-bounce-slow{animation:bounceSlow 2.5s ease-in-out infinite}
+.animate-shake{animation:shake .4s ease-in-out}
+</style>
 </head>
 <body>
+<div id="loading" class="fixed inset-0 flex items-center justify-center z-[9999] transition-opacity duration-500" style="background:#0a0a1a">
+  <div class="text-center">
+    <div class="w-12 h-12 border-4 rounded-full animate-spin mx-auto mb-4" style="border-color:rgba(212,165,116,.2);border-top-color:#D4A574"></div>
+    <p class="gold font-serif text-lg">正在载入华夏学堂...</p>
+  </div>
+</div>
 <div id="canvas-container"></div>
 <div id="app" class="page"></div>
 <script type="module" src="/src/main.ts"></script>
