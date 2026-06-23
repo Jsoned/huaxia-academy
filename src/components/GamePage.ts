@@ -36,10 +36,12 @@ export class GamePage {
 
   hide() {
     if (this.scene) { this.scene.dispose(); this.scene = null; }
+    this.container.style.pointerEvents = '';
     this.container.style.display = 'none';
   }
 
   private showRoam() {
+    this.container.style.pointerEvents = 'none';
     this.container.innerHTML = `
       <div class="absolute inset-0 z-10 pointer-events-none">
         <div class="glass sticky top-0 px-4 py-3 flex items-center justify-between pointer-events-auto">
@@ -55,7 +57,7 @@ export class GamePage {
     `;
     const canvasDiv = document.createElement('div');
     canvasDiv.id = 'roam-canvas';
-    canvasDiv.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;';
+    canvasDiv.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:5;';
     document.body.appendChild(canvasDiv);
 
     this.scene = new DynastyScene('roam-canvas', (char) => {
@@ -83,7 +85,7 @@ export class GamePage {
     this.scene.animate();
 
     document.getElementById('backBtn')!.addEventListener('click', () => {
-      if (canvasDiv.parentNode) document.body.removeChild(canvasDiv);
+      this.container.style.pointerEvents = ''; if (canvasDiv.parentNode) document.body.removeChild(canvasDiv);
       this.hide();
       if (this.onBack) this.onBack();
     });
