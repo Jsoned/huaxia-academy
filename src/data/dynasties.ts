@@ -1,0 +1,63 @@
+import type{Character,Poem,QuizQuestion,HistoricalEvent}from"../types/index.ts";
+export const characters:Character[]=[
+{id:"c1",name:"李白",dynasty:"tang",title:"诗仙",description:"唐代伟大的浪漫主义诗人，被后人誉为诗仙。其诗风雄奇豪放，想象丰富，语言流转自然。",quote:"天生我材必有用，千金散尽还复来",x:-5,y:1,z:-3,color:0xFFD700},
+{id:"c2",name:"杜甫",dynasty:"tang",title:"诗圣",description:"唐代伟大的现实主义诗人，与李白合称李杜。其诗被称为诗史，多反映社会动荡。",quote:"会当凌绝顶，一览众山小",x:5,y:1,z:-3,color:0xCD853F},
+{id:"c3",name:"王维",dynasty:"tang",title:"诗佛",description:"盛唐山水田园诗派代表，精通诗书画乐，苏轼赞其诗中有画，画中有诗。",quote:"空山不见人，但闻人语响",x:-3,y:1,z:5,color:0x90EE90},
+{id:"c4",name:"白居易",dynasty:"tang",title:"诗魔",description:"唐代伟大的现实主义诗人，倡导新乐府运动，诗歌通俗易懂，老妪能解。",quote:"野火烧不尽，春风吹又生",x:3,y:1,z:5,color:0x87CEEB},
+{id:"c5",name:"李世民",dynasty:"tang",title:"唐太宗",description:"唐朝第二位皇帝，开创贞观之治，被尊为天可汗，文武双全。",quote:"以铜为镜，可以正衣冠",x:0,y:1,z:-8,color:0xDC143C},
+{id:"c6",name:"武则天",dynasty:"tang",title:"女皇",description:"中国历史上唯一的正统女皇帝，建立武周，上承贞观下启开元。",quote:"欲安其家，先安其国",x:-7,y:1,z:0,color:0xFF69B4},
+{id:"c7",name:"苏轼",dynasty:"song",title:"东坡居士",description:"北宋文学家、书画家，唐宋八大家之一，词开豪放一派。",quote:"大江东去，浪淘尽千古风流人物",x:8,y:1,z:-2,color:0x4169E1},
+{id:"c8",name:"李清照",dynasty:"song",title:"易安居士",description:"宋代女词人，婉约词派代表，有千古第一才女之称。",quote:"寻寻觅觅，冷冷清清，凄凄惨惨戚戚",x:-8,y:1,z:2,color:0xDDA0DD},
+{id:"c9",name:"辛弃疾",dynasty:"song",title:"稼轩居士",description:"南宋豪放派词人，与苏轼合称苏辛，一生以恢复中原为志。",quote:"想当年，金戈铁马，气吞万里如虎",x:6,y:1,z:4,color:0xB22222},
+{id:"c10",name:"陆游",dynasty:"song",title:"放翁",description:"南宋文学家、史学家、爱国诗人，诗作近万首，为古今最多。",quote:"山重水复疑无路，柳暗花明又一村",x:-6,y:1,z:6,color:0x228B22},
+{id:"c11",name:"岳飞",dynasty:"song",title:"武穆",description:"南宋抗金名将，民族英雄，精忠报国，其词满江红千古传诵。",quote:"莫等闲，白了少年头，空悲切",x:2,y:1,z:-6,color:0x8B0000},
+{id:"c12",name:"王安石",dynasty:"song",title:"荆公",description:"北宋政治家、文学家，唐宋八大家之一，推行变法。",quote:"不畏浮云遮望眼，自缘身在最高层",x:-2,y:1,z:8,color:0x4B0082}
+];
+export const poems:Poem[]=[
+{id:"p1",title:"静夜思",author:"李白",dynasty:"tang",lines:["床前明月光","疑是地上霜","举头望明月","低头思故乡"],hint:"思乡"},
+{id:"p2",title:"春晓",author:"孟浩然",dynasty:"tang",lines:["春眠不觉晓","处处闻啼鸟","夜来风雨声","花落知多少"],hint:"春日清晨"},
+{id:"p3",title:"登鹳雀楼",author:"王之涣",dynasty:"tang",lines:["白日依山尽","黄河入海流","欲穷千里目","更上一层楼"],hint:"登高望远"},
+{id:"p4",title:"望庐山瀑布",author:"李白",dynasty:"tang",lines:["日照香炉生紫烟","遥看瀑布挂前川","飞流直下三千尺","疑是银河落九天"],hint:"庐山瀑布"},
+{id:"p5",title:"春望",author:"杜甫",dynasty:"tang",lines:["国破山河在","城春草木深","感时花溅泪","恨别鸟惊心"],hint:"战乱悲歌"},
+{id:"p6",title:"水调歌头",author:"苏轼",dynasty:"song",lines:["明月几时有","把酒问青天","不知天上宫阙","今夕是何年"],hint:"中秋望月"},
+{id:"p7",title:"如梦令",author:"李清照",dynasty:"song",lines:["常记溪亭日暮","沉醉不知归路","兴尽晚回舟","误入藕花深处"],hint:"溪亭日暮"},
+{id:"p8",title:"破阵子",author:"辛弃疾",dynasty:"song",lines:["醉里挑灯看剑","梦回吹角连营","八百里分麾下炙","五十弦翻塞外声"],hint:"军旅豪情"},
+{id:"p9",title:"示儿",author:"陆游",dynasty:"song",lines:["死去元知万事空","但悲不见九州同","王师北定中原日","家祭无忘告乃翁"],hint:"临终遗愿"},
+{id:"p10",title:"江雪",author:"柳宗元",dynasty:"tang",lines:["千山鸟飞绝","万径人踪灭","孤舟蓑笠翁","独钓寒江雪"],hint:"寒江独钓"},
+{id:"p11",title:"相思",author:"王维",dynasty:"tang",lines:["红豆生南国","春来发几枝","愿君多采撷","此物最相思"],hint:"红豆相思"},
+{id:"p12",title:"游子吟",author:"孟郊",dynasty:"tang",lines:["慈母手中线","游子身上衣","临行密密缝","意恐迟迟归"],hint:"母爱深情"}
+];
+export const quizQuestions:QuizQuestion[]=[
+{id:"q1",question:"唐朝的开国皇帝是谁？",options:["李渊","李世民","李隆基","武则天"],correct:0,dynasty:"tang",explanation:"李渊于618年建立唐朝，是为唐高祖。"},
+{id:"q2",question:"李白被称为什么？",options:["诗圣","诗仙","诗佛","诗魔"],correct:1,dynasty:"tang",explanation:"李白诗风飘逸，被贺知章称为谪仙人，后人尊为诗仙。"},
+{id:"q3",question:"杜甫的诗被称为什么？",options:["诗史","诗经","诗话","诗品"],correct:0,dynasty:"tang",explanation:"杜甫的诗真实反映了安史之乱前后的社会现实，被称为诗史。"},
+{id:"q4",question:"贞观之治是哪位皇帝开创的？",options:["唐高祖","唐太宗","唐玄宗","唐中宗"],correct:1,dynasty:"tang",explanation:"唐太宗李世民在位期间，政治清明，经济繁荣，史称贞观之治。"},
+{id:"q5",question:"安史之乱发生在哪个皇帝在位期间？",options:["唐太宗","武则天","唐玄宗","唐肃宗"],correct:2,dynasty:"tang",explanation:"755年，安禄山、史思明发动叛乱，此时唐玄宗在位，唐朝由盛转衰。"},
+{id:"q6",question:"苏轼是哪个朝代的文学家？",options:["唐朝","北宋","南宋","元朝"],correct:1,dynasty:"song",explanation:"苏轼是北宋中期文坛领袖，唐宋八大家之一。"},
+{id:"q7",question:"李清照的词风属于哪一派？",options:["豪放派","婉约派","田园派","边塞派"],correct:1,dynasty:"song",explanation:"李清照是婉约词派的代表人物，词风清丽婉转。"},
+{id:"q8",question:"岳飞背上刺的四个字是什么？",options:["精忠报国","忠心报国","尽忠报国","赤胆忠心"],correct:2,dynasty:"song",explanation:"岳母在岳飞背上刺下尽忠报国四字，激励其报效国家。"},
+{id:"q9",question:"唐宋八大家中唐朝有几位？",options:["2位","3位","4位","5位"],correct:0,dynasty:"tang",explanation:"唐宋八大家中唐朝有韩愈和柳宗元两位，其余六位是宋朝人。"},
+{id:"q10",question:"王安石变法发生在哪个朝代？",options:["唐朝","北宋","南宋","明朝"],correct:1,dynasty:"song",explanation:"1069年，宋神宗任用王安石推行变法，旨在富国强兵。"},
+{id:"q11",question:"床前明月光是谁的诗句？",options:["杜甫","李白","王维","白居易"],correct:1,dynasty:"tang",explanation:"出自李白的《静夜思》，表达了思乡之情。"},
+{id:"q12",question:"大江东去是谁的代表作？",options:["辛弃疾","苏轼","李清照","陆游"],correct:1,dynasty:"song",explanation:"出自苏轼的《念奴娇·赤壁怀古》，开创豪放词风。"},
+{id:"q13",question:"会当凌绝顶出自哪首诗？",options:["《望岳》","《登高》","《春望》","《绝句》"],correct:0,dynasty:"tang",explanation:"出自杜甫的《望岳》，描绘了泰山的雄伟气势。"},
+{id:"q14",question:"山重水复疑无路出自谁的诗？",options:["苏轼","陆游","辛弃疾","杨万里"],correct:1,dynasty:"song",explanation:"出自陆游的《游山西村》，比喻困境中总有转机。"},
+{id:"q15",question:"中国历史上唯一的女皇帝是谁？",options:["吕后","武则天","慈禧太后","孝庄太后"],correct:1,dynasty:"tang",explanation:"武则天于690年称帝，建立武周，是中国历史上唯一的正统女皇帝。"},
+{id:"q16",question:"野火烧不尽形容的是什么？",options:["友情","爱情","生命力","思乡"],correct:2,dynasty:"tang",explanation:"出自白居易《赋得古原草送别》，赞美野草顽强的生命力。"},
+{id:"q17",question:"莫等闲白了少年头是谁的词句？",options:["岳飞","辛弃疾","文天祥","陆游"],correct:0,dynasty:"song",explanation:"出自岳飞的《满江红》，劝诫人们珍惜时光。"},
+{id:"q18",question:"红豆生南国是谁的诗句？",options:["李白","王维","杜甫","白居易"],correct:1,dynasty:"tang",explanation:"出自王维的《相思》，以红豆寄托思念之情。"},
+{id:"q19",question:"王安石的名句不畏浮云遮望眼下一句是？",options:["自缘身在最高层","只缘身在此山中","无限风光在险峰","一览众山小"],correct:0,dynasty:"song",explanation:"出自《登飞来峰》，表达了高瞻远瞩的胸襟。"},
+{id:"q20",question:"慈母手中线出自哪首诗？",options:["《游子吟》","《静夜思》","《春晓》","《悯农》"],correct:0,dynasty:"tang",explanation:"出自孟郊的《游子吟》，歌颂伟大的母爱。"}
+];
+export const events:HistoricalEvent[]=[
+{id:"e1",title:"贞观之治",dynasty:"tang",year:"627-649",description:"唐太宗李世民在位期间，政治清明，经济发展，社会安定，边疆稳固，是唐朝的第一个治世。",importance:10},
+{id:"e2",title:"开元盛世",dynasty:"tang",year:"713-741",description:"唐玄宗李隆基前期励精图治，唐朝达到鼎盛，经济繁荣，文化昌盛，万邦来朝。",importance:10},
+{id:"e3",title:"安史之乱",dynasty:"tang",year:"755-763",description:"安禄山、史思明发动叛乱，唐朝由盛转衰，人口锐减，藩镇割据局面形成。",importance:10},
+{id:"e4",title:"黄巢起义",dynasty:"tang",year:"875-884",description:"黄巢领导的农民大起义，转战大半个中国，加速了唐朝的灭亡。",importance:8},
+{id:"e5",title:"陈桥兵变",dynasty:"song",year:"960",description:"赵匡胤在陈桥驿被部下黄袍加身，建立宋朝，史称北宋。",importance:9},
+{id:"e6",title:"王安石变法",dynasty:"song",year:"1069",description:"宋神宗任用王安石推行新法，旨在富国强兵，但因阻力太大最终失败。",importance:9},
+{id:"e7",title:"靖康之变",dynasty:"song",year:"1127",description:"金兵攻破汴京，俘虏徽钦二帝，北宋灭亡，南宋建立。",importance:10},
+{id:"e8",title:"岳飞抗金",dynasty:"song",year:"1134-1141",description:"岳飞率领岳家军多次大败金兵，收复失地，却被秦桧以莫须有罪名害死。",importance:9},
+{id:"e9",title:"澶渊之盟",dynasty:"song",year:"1005",description:"北宋与辽朝签订和约，双方约为兄弟之国，维持了近百年的和平。",importance:7},
+{id:"e10",title:"杯酒释兵权",dynasty:"song",year:"961",description:"宋太祖赵匡胤通过酒宴，和平解除将领兵权，加强中央集权。",importance:8}
+];
